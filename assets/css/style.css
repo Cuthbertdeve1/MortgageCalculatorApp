@@ -1,0 +1,131 @@
+body{
+  background-color:  hsl(202, 86%, 94%);
+  font-weight: 500;
+  font-size: 16px;
+  margin: auto;
+}
+.container{
+   margin-top: 5rem;
+   width: 75%;
+}
+h3{
+  color: hsl(202, 55%, 16%);
+}
+h4{
+  color: hsl(0, 0%, 100%);
+}
+.results-show{
+  text-align: left;
+}
+.card{
+  background-color:  hsl(202.29deg 56% 12.35%);
+  text-align: left;
+  border-radius: 1rem;
+  border-top:3px solid hsl(61, 70%, 52%);
+}
+hr{
+  border: 1px solid hsl(200, 26%, 54%);;
+}
+.card h2{
+  color: hsl(61, 70%, 52%);
+}
+.main-row{
+    background-color: hsl(0, 0%, 100%);
+  border-radius: 1rem 1rem 1rem 1rem;
+
+}
+.fields{
+
+  background-color: hsl(0, 0%, 100%);
+  padding: 2rem;
+
+  border-radius: 1rem 0rem 0rem 1rem;
+
+}
+.header a{
+float: right;
+color: hsl(200, 26%, 54%);
+font-size: 16px;
+}
+label{
+  color: hsl(200, 26%, 54%);
+  font-weight: 500;
+}
+
+.input-group-text{
+  background-color:  hsl(202, 86%, 94%);
+  color: hsl(200, 24%, 40%);
+  font-weight: 500;
+  font-size: 16px;
+}
+.form-control{
+  font-weight: 700;
+  font-size: 18px;
+  color: hsl(202, 55%, 16%);
+}
+.results{
+
+  background-color: hsl(202, 55%, 16%);
+  text-align:center;
+  color: hsl(0, 0%, 100%);
+  border-radius:0rem 1rem 1rem 3rem;
+}
+.re-img{
+  margin-top: 5rem;
+}
+.form-check{
+  border: 1px solid hsl(203, 41%, 72%);
+  /* padding: 5px; */
+  border-radius: 0.3rem;
+}
+.form-check-label{
+  font-size: 1rem;
+  font-weight:500;
+}
+.form-check-input{
+  margin-left: 1rem;
+}
+.form-check-input[type=radio] {
+    border-radius: 50%;
+    border: 2px solid hsl(202, 55%, 16%);
+}
+.form-check-label{
+  color: hsl(202, 55%, 16%);
+  font-weight: 700;;
+  font-size: 16px;
+}
+.form-control.is-invalid, .was-validated .form-control:invalid{
+    border-color: hsl(4, 69%, 50%);
+    padding-right: calc(1.5em + .75rem);
+    background-image: none;
+    background-repeat: no-repeat;
+    background-position: right calc(.375em + .1875rem) center;
+    background-size: calc(.75em + .375rem) calc(.75em + .375rem);
+}
+/* .input-groupspan{
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(4, 69%, 50%);
+} */
+.error-message{
+  color: hsl(4, 69%, 50%);
+}
+.input-group-text{
+  background-color:hsl(202, 86%, 94%);
+  color: hsl(200, 24%, 40%);
+}
+
+.btn-cal{
+  background-color: hsl(61, 70%, 52%);
+  border-radius: 2rem;
+  font-weight: 700;
+  color: hsl(202, 55%, 16%);
+}
+.re p{
+  color: hsl(203, 41%, 72%);
+}
+input[type="text"].input-error{
+  border: 2px solid hsla(4, 69%, 55%);
+}
+.results-show{
+  display: none;
+}

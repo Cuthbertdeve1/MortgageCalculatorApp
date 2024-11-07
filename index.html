@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Mortgage repayment calculator</title>
+ <link rel="stylesheet" href="assets/css/bootstrap/bootstrap.min.css">
+ <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <div class="container">
+ <div class="row main-row">
+   <div class="col-md-12 col-lg-6 fields">
+      <div class="row header mb-3">
+        <div class="col-sm-12 col-md-9">
+          <h3>Mortgage Calculator</h3>
+
+        </div>
+        <div class=" col-sm-12 col-md-3 ">
+           <a class="clear-all" id="clearAll" href="#">Clear All</a>
+        </div>
+      </div>
+      <div class=" row g-3 ">
+       <div class="col-12">
+        <label  for="mortgageAmntInput"  class="form-label">Mortgage Amount</label>
+        <div class="input-group">
+   <span class="input-group-text" id="mortgageAmntSpan">£</span>
+   <input type="text"  id="mortgageAmntInput" class="form-control">
+   </div>
+   <div class="invalid-feedback error-message" id="mortgageAmntError">
+    <p>This Field is required</p>
+  </div>
+</div>
+
+        <div class="col-md-6">
+          <label class="form-label">Mortgage Term</label>
+     <div class="input-group has-validation">
+
+       <input type="text" class="form-control" id="mortgageTermInput" value="">
+       <span class="input-group-text" id="mortgageYrs">years</span>
+       <div class="invalid-feedback error-message" id="mortgageTermError">
+         This Field is required
+       </div>
+     </div>
+        </div>
+        <div class="col-md-6">
+          <label for="validationCustomUsername" class="form-label">  Interest Rate</label>
+       <div class="input-group has-validation">
+
+         <input type="text" class="form-control" id="interestRateInput" value="">
+         <span class="input-group-text" id="interestRateSpan">%</span>
+         <div class="invalid-feedback error-message" id="interestRateError">
+           This Field is required
+         </div>
+       </div>
+        </div>
+              <div class="col-12">
+
+                   <div class=" has-validation">
+                        <label for="mortgageType" class="form-label">Mortgage Type</label>
+
+                        <div class="form-check p-2">
+                            <input class="form-check-input  mx-3" type="radio" name="mortgageType" id="repaymentCheck" value="repayment">
+                            <label class="form-check-label mx-auto" for="repayment">
+                                Repayment
+                            </label>
+                        </div>
+                        <div class="form-check mt-2 p-2">
+                            <input class="form-check-input mx-3 " type="radio" name="mortgageType" id="interestOnlyCheck" value="interestOnly">
+                            <label class="form-check-label mx-auto" for="interestOnly">
+                                Interest Only
+                            </label>
+                        </div>
+                        <div class="invalid-feedback error-message" id="mortgageTypeError">
+                             Please choose a username.
+                         </div>
+                        </div>
+
+                </div>
+
+  <div class="d-grid col-9">
+</div>
+    <button class="btn btn-cal" id="calculateBtn" type="submit"><img src="assets/images/icon-calculator.svg" alt=""> Calculate Repayments</button>
+  </div>
+
+
+
+
+   </div>
+   <div class="col-md-12 col-lg-6 results re">
+     <div class="mt-auto rslts" id="rslts">
+    <img class="re-img " src="assets/images/illustration-empty.svg" alt="">
+
+    <div class="re">
+      <h2 id="mortageResults">Results shown here</h2>
+      <p>Complete the form and click “calculate repayments” to see what
+      your monthly repayments would be.
+</p>
+    </div>
+    </div>
+     <div class="my-3 rslts results-show p-3 text-left" id="resultsDisplay">
+       <h4>Your results</h4>
+       <p>Your results are shown below based on the information you provided. To adjust the results, edit the form and click “calculate repayments” again. </p>
+       <div class="card mx-3 p-4 mt-3">
+
+         <p>Your monthly repayments</p>
+         <div class="">
+           <h2 id="monthlyRepayment">£ 1,7200</h2>
+         </div>
+         <div class="hr-line my-2">
+           <hr>
+         </div>
+
+         <p>Total you'll repay over the term</p>
+         <h4 id="totalRepayment">£ 5000.45</h4>
+       </div>
+     </div>
+
+   </div>
+
+ </div>
+  </div>
+
+<!-- <img class="re-img " src="assets/images/desktop-design.jpg" alt="img"> -->
+
+
+<script src="assets/js/mortgageCal.js" charset="utf-8"></script>
+<script src="assets/js/bootstrap/js/bootstrap.bundle.min.js" charset="utf-8"></script>
+
+</body>
+</html>

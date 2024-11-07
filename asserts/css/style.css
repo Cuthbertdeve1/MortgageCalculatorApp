@@ -1,0 +1,149 @@
+
+body{
+  background-color: hsl(185, 41%, 84%);
+  margin-top: 3rem;
+  font-weight: 700;
+  font-family: monospace;
+}
+.logo{
+  text-align: center;
+  padding-bottom: 2rem;
+}
+.tip-app{
+  background-color: hsl(0, 0%, 100%);
+  width: 70%;
+  margin:auto;
+ padding: 2rem;
+ border-radius: 1rem;
+}
+.labels{
+  color:hsl(186, 14%, 43%);
+}
+.form-input{
+    position:relative;
+}
+.form-control{
+   background-color: hsl(189, 41%, 97%);
+  color:hsl(183, 100%, 15%);
+  font-size: 24px;
+  border: 2px solid hsl(189, 41%, 97%);
+  text-align: right;
+}
+input[type="text"]:hover {
+  border: 2px solid hsl(172, 67%, 45%);
+}
+.text-input::placeholder{
+    color: hsl(184, 14%, 56%);
+}
+.static-value{
+    position:absolute;
+    left:10px;
+    font-size:0.85em;
+    top:10px;
+}
+.tips-btns{
+  margin: 2rem 1px;
+}
+.percent-btns{
+   background-color:hsl(183, 100%, 15%);
+   color: hsl(189, 41%, 97%);
+   font-weight: bold;
+    padding: 10px;
+   border: none;
+   font-size: 1.3rem;
+}
+.custom-btn{
+  background-color:hsl(189, 41%, 97%);
+  color: hsl(183, 100%, 15%);
+  text-align: right;
+  font-size: 1.3rem;
+}
+
+.btn:hover{
+  background-color:hsl(172.8deg 50.61% 77.04%);
+  color: hsl(183, 100%, 15%);
+}
+.btn:focus{
+  background-color:hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+}
+
+.custom-btn:hover{
+  background-color:hsl(189, 41%, 97%);
+}
+.card{
+  background-color: hsl(183, 100%, 15%);
+  color: hsl(172, 67%, 45%);
+  height: 100%;
+}
+.tip-calculater{
+  padding: 3.2rem 1.5rem 1.5rem;
+  border-radius: 1rem;
+    position: relative;
+}
+.tip-calculater h5{
+  color: hsl(189, 41%, 97%);
+  font-size: 1rem;
+}
+.tip-calculater p{
+  color: hsl(185, 41%, 84%);
+  font-size: 0.8rem;
+}
+.btn-reset {
+  background-color:hsl(181.11deg 66.31% 26.89% / 66%);
+  color: hsl(183, 100%, 15%);
+  font-weight: bold;
+   padding: 10px;
+  border: none;
+  font-size: 1.3rem;
+}
+.error-message{
+  color:hsla(0, 77%, 55%, 0.954);
+  text-align: right;
+}
+input[type="text"].input-error{
+  border: 2px solid hsla(0, 77%, 55%, 0.954);
+}
+@media (max-width:1200px) and (min-width:992px) {
+  .percent-btns{
+      padding: 6px;
+       font-size: 1rem;
+  }
+  .custom-btn{
+    font-size:0.9rem;
+    padding: 6px;
+  }
+  .btn-reset {
+     padding: 6px;
+    border: none;
+    font-size: 1rem;
+  }
+}
+@media (max-width: 992px) {
+    .card{
+      margin-top: 2rem;
+    }
+}
+@media (min-width: 992px) {
+    .btn {
+      flex: 0 0 auto;
+        width: 29.23%;
+    }
+
+}
+@media (max-width: 512px) {
+  .tip-app{
+    width: 100%;
+  }
+   .container {
+    --bs-gutter-y: 0;
+      --bs-gutter-x: 0rem;
+}
+}
+
+ @media (min-width: 350px) {
+.btn{
+    flex: 0 0 auto;
+    width: 46%;
+}
+}
