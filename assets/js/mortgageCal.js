@@ -1,4 +1,4 @@
-const clearAll = document.getElementById('clearAll');
+  const clearAll = document.getElementById('clearAll');
 const mortageAmount = document.getElementById('mortgageAmntInput');
 const mortgageAmntErorrs = document.getElementById('mortgageAmntError');
 const mortgageTerm = document.getElementById('mortgageTermInput');
@@ -8,33 +8,36 @@ const interestRateError = document.getElementById('interestRateError');
 const mortgageAmntSpan = document.getElementById('mortgageAmntSpan');
 const mortgageYrsSpan = document.getElementById('mortgageYrs');
 const interestRateSpan = document.getElementById('interestRateSpan');
-//const ;
-// const repaymentCheck = document.getElementById('repaymentCheck');
-// const interestOnlyCheck = document.getElementById('interestOnlyCheck');
+const repaymentFCheck = document.getElementById('repaymentFormCheck');
+ const interestOnlyFCheck = document.getElementById('interestFormCheck');
 const mortgageTypeErr = document.getElementById('mortgageTypeError');
-const mortgageType = document.querySelector('input[name="mortgageType"]');
+const mortgageType = document.getElementsByName('mortgageType');
 const calculateBtn = document.getElementById('calculateBtn');
 const mortageResults = document.getElementById('mortageResults');
 const resultsDisplay = document.getElementById('resultsDisplay');
 const monthlyRepaymentDis = document.getElementById('monthlyRepayment');
 const totalRepaymentDis = document.getElementById('totalRepayment');
 const rslts = document.getElementById('rslts');
+const formCheck = document.querySelectorAll('.form-check');
 function mortgageCalculator(){
   const amount = parseFloat(mortageAmount.value);
   const term = parseInt(mortgageTerm.value);
   const interest = parseFloat(interestRate.value)/100;
-    const type = mortgageType.value;
+  var selectedOption;
+  mortgageType.forEach((i) => {
+    if(i.checked){
+      selectedOption = i.value;
+    }
+  });
     let valid = true;
     if(isNaN(amount)){
       validationError(mortgageAmntErorrs,mortageAmount,mortgageAmntSpan);
       valid = false;
     }
     if(amount<=0){
-      //validation();
       valid = false;
     }
     if(isNaN(term)){
-
       validationError(mortgageTermError,mortgageTerm,mortgageYrsSpan);
       valid = false;
     }
@@ -42,34 +45,37 @@ function mortgageCalculator(){
       validationError(interestRateError,interestRate,interestRateSpan);
       valid = false;
     }
-    if(!(type==='')){
-      //validationError(mortgageTypeErr,mortgageType);
+    if(!selectedOption){
       mortgageTypeErr.classList.remove('invalid-feedback');
       valid = false;
     }
+    //calculations
     if(valid){
-    let monthlyRepayment, totalRepayment;
-    if(type==='repayment'){
+      rslts.style=('display:none');
+      resultsDisplay.style=('display:block');
+      console.log('amount ' +amount);
+      console.log('years '+ term);
+      console.log('interest '+ interest);
+      console.log('type '+ selectedOption);
       const monthlyRate = interest / 12;
-      const numbOfPayments = term * 12 ;
-      monthlyRepayment = (amount * monthlyRate) / (1- Math.pow(1+ monthlyRate, numbOfPayments));
-      totalRepayment = monthlyRepayment * numbOfPayments;
-      rslts.style=('display:none');
-      resultsDisplay.style=('display:block');
-      monthlyRepaymentDis.innerHTML=`£ ${monthlyRepayment.toFixed(2)}`;
-      totalRepaymentDis.innerHTML = `£ ${totalRepayment.toFixed(2)}`;
-      console.log('monthly repayment is'+ monthlyRepayment.toFixed(2));
-      console.log('total repayment is'+ totalRepayment.toFixed(2));
+      const totalMonths = term * 12 ;
+      const  monthlyRepayment = (amount * monthlyRate) /
+      (1- Math.pow(1 + monthlyRate, -totalMonths));
+      const  totalRepayment = monthlyRepayment * totalMonths;
+      const  totalInterestRepayment = totalRepayment - amount ;
+      const monthlyInterestRepayment = totalInterestRepayment/totalMonths;
+        if(selectedOption==='repayment'){
+      monthlyRepaymentDis.innerHTML=`£ ${addCommas(monthlyRepayment.toFixed(2))}`;
+      totalRepaymentDis.innerHTML = `£ ${addCommas(totalRepayment.toFixed(2))}`;
     }
-    else {
-      monthlyRepayment = (amount * interest) / 12;
-      totalRepayment = monthlyRepayment * term * 12;
-      rslts.style=('display:none');
-      resultsDisplay.style=('display:block');
-      console.log('monthly repayment is'+ monthlyRepayment.toFixed(2));
-      console.log('total repayment is'+ totalRepayment.toFixed(2));
+    else if(selectedOption==="interestOnly") {
+      monthlyRepaymentDis.innerHTML=`£ ${addCommas(monthlyInterestRepayment.toFixed(2))}`;
+      totalRepaymentDis.innerHTML = `£ ${addCommas(totalInterestRepayment.toFixed(2))}`;
     }
 }
+}
+function addCommas(num){
+  return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g,",");
 }
 mortageAmount.addEventListener('input',()=>{
 clearError(mortgageAmntErorrs,mortageAmount,mortgageAmntSpan);
@@ -91,21 +97,50 @@ function clearError(errorDisplay, inputField,errSpan) {
   inputField.classList.remove('input-error');
   errSpan.style="";
 }
-function clearMortagageAll(){
-  mortageAmount.value='';
-  mortgageTerm.value='';
-  interestRate.value='';
- resultsDisplay.style=('display:none');
- rslts.style=('display:block');
-    clearError(mortgageAmntErorrs,mortageAmount,mortgageAmntSpan);
-    clearError(mortgageTermError,mortgageTerm,mortgageYrsSpan);
-    clearError(interestRateError,interestRate,interestRateSpan);
+function clearMortgageAll() {
+  // Clear input fields
+  mortageAmount.value = '';
+  mortgageTerm.value = '';
+  interestRate.value = '';
+
+  // Reset results display
+  resultsDisplay.style = 'display:none';
+  rslts.style = 'display:block';
+
+  // Clear error styles
+  clearError(mortgageAmntErorrs, mortageAmount, mortgageAmntSpan);
+  clearError(mortgageTermError, mortgageTerm, mortgageYrsSpan);
+  clearError(interestRateError, interestRate, interestRateSpan);
+
+  // Reset radio buttons and their styles
+  mortgageType.forEach((type) => {
+    type.checked = false;
+    const parent = type.closest('.form-check');
+    parent.style.backgroundColor = ''; // Reset background color
+  });
+
+  // Reset error display for mortgage type
+  mortgageTypeErr.classList.add('invalid-feedback');
 }
-clearAll.addEventListener('click',() =>{
-  clearMortagageAll();
-})
+// Event listener for "Clear All" button
+clearAll.addEventListener('click', () => {
+  clearMortgageAll();
+});
 
-calculateBtn.addEventListener('click',()=>{
-mortgageCalculator();
-
+// Event listener to handle background color change for checkboxes
+mortgageType.forEach((type) => {
+  type.addEventListener('change', () => {
+    formCheck.forEach((check) => {
+      check.style.backgroundColor = ''; // Reset all backgrounds
+    });
+    if (type.checked) {
+      mortgageTypeErr.classList.add('invalid-feedback');
+      const parent = type.closest('.form-check');
+      parent.style.backgroundColor = 'hsl(60deg 72.22% 92.94%)'; // Change background when checked
+    }
+  });
 })
+// Other event listeners and logic remain unchanged
+calculateBtn.addEventListener('click', () => {
+  mortgageCalculator();
+});

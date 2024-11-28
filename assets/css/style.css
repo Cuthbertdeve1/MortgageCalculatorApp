@@ -1,12 +1,21 @@
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('../fonts/PlusJakartaSans-VariableFont_wght.ttf');
+}
+@font-face {
+  font-family: 'Plus Jakarta Sans Italic';
+  src: url('../fonts/PlusJakartaSans-Italic-VariableFont_wght.ttf');
+}
 body{
   background-color:  hsl(202, 86%, 94%);
+  font-family: 'Plus Jakarta Sans','Plus Jakarta Sans Italic';
   font-weight: 500;
   font-size: 16px;
   margin: auto;
+  font-feature-settings: "tnum";
 }
-.container{
-   margin-top: 5rem;
-   width: 75%;
+h4, h3, h2, h1{
+  font-weight: 700;
 }
 h3{
   color: hsl(202, 55%, 16%);
@@ -14,20 +23,9 @@ h3{
 h4{
   color: hsl(0, 0%, 100%);
 }
-.results-show{
-  text-align: left;
-}
-.card{
-  background-color:  hsl(202.29deg 56% 12.35%);
-  text-align: left;
-  border-radius: 1rem;
-  border-top:3px solid hsl(61, 70%, 52%);
-}
-hr{
-  border: 1px solid hsl(200, 26%, 54%);;
-}
-.card h2{
-  color: hsl(61, 70%, 52%);
+.container{
+   margin-top: 5rem;
+   width: 75%;
 }
 .main-row{
     background-color: hsl(0, 0%, 100%);
@@ -35,15 +33,11 @@ hr{
 
 }
 .fields{
-
   background-color: hsl(0, 0%, 100%);
   padding: 2rem;
-
   border-radius: 1rem 0rem 0rem 1rem;
-
 }
 .header a{
-float: right;
 color: hsl(200, 26%, 54%);
 font-size: 16px;
 }
@@ -57,25 +51,16 @@ label{
   color: hsl(200, 24%, 40%);
   font-weight: 500;
   font-size: 16px;
+  font-feature-settings: "tnum";
 }
 .form-control{
   font-weight: 700;
   font-size: 18px;
   color: hsl(202, 55%, 16%);
 }
-.results{
 
-  background-color: hsl(202, 55%, 16%);
-  text-align:center;
-  color: hsl(0, 0%, 100%);
-  border-radius:0rem 1rem 1rem 3rem;
-}
-.re-img{
-  margin-top: 5rem;
-}
 .form-check{
   border: 1px solid hsl(203, 41%, 72%);
-  /* padding: 5px; */
   border-radius: 0.3rem;
 }
 .form-check-label{
@@ -94,38 +79,115 @@ label{
   font-weight: 700;;
   font-size: 16px;
 }
-.form-control.is-invalid, .was-validated .form-control:invalid{
-    border-color: hsl(4, 69%, 50%);
-    padding-right: calc(1.5em + .75rem);
-    background-image: none;
-    background-repeat: no-repeat;
-    background-position: right calc(.375em + .1875rem) center;
-    background-size: calc(.75em + .375rem) calc(.75em + .375rem);
-}
-/* .input-groupspan{
-  color: hsl(0, 0%, 100%);
-  background-color: hsl(4, 69%, 50%);
-} */
-.error-message{
-  color: hsl(4, 69%, 50%);
-}
+
 .input-group-text{
   background-color:hsl(202, 86%, 94%);
   color: hsl(200, 24%, 40%);
 }
-
+input[type="text"].input-error{
+  border: 1px solid hsla(4, 69%, 55%);
+}
+.input-group:hover .form-control{
+  border:1px solid hsl(202, 55%, 16%);
+  border-right: 0px;
+}
+.input-group:hover .input-group-text{
+border: 1px solid hsl(202, 55%, 16%);
+border-left: 0px;
+}
+.input-group:hover .span1{
+  border: 1px solid hsl(202, 55%, 16%);
+  border-right: 0px;
+}
+.input-group:hover .inp2{
+  border: 1px solid hsl(202, 55%, 16%);;
+  border-left: 0px;
+}
+.form-check:hover{
+  border:1px solid hsl(61, 70%, 52%);
+}
+.form-check-input:checked{
+  background-color: hsl(61, 70%, 52%);
+  border:1px solid hsl(61, 70%, 52%);
+  box-shadow: none;
+}
+.input-group:focus-within{
+ .input-group-text{
+ border:1px solid hsl(61, 70%, 52%);
+ background-color:hsl(61, 70%, 52%);
+ }
+  .form-control{
+    box-shadow: none;
+   border:1px solid hsl(61, 70%, 52%);
+ }
+}
 .btn-cal{
+  width: 75%;
   background-color: hsl(61, 70%, 52%);
   border-radius: 2rem;
   font-weight: 700;
   color: hsl(202, 55%, 16%);
 }
+.btn-cal:hover{
+  background-color: hsl(62.07deg 71.9% 76.27%);
+}
+.error-message{
+  color: hsl(4, 69%, 50%);
+}
+.results-show{
+  text-align: left;
+}
+.card{
+  background-color:  hsl(202.29deg 56% 12.35%);
+  text-align: left;
+  border-radius: 1rem;
+  border-top:3px solid hsl(61, 70%, 52%);
+}
+hr{
+  border: 1px solid hsl(200, 26%, 54%);;
+}
+.card h1{
+  color: hsl(61, 70%, 52%);
+}
+.card h3{
+  color: hsl(0, 0%, 100%);
+}
+
+.results{
+  background-color: hsl(202, 55%, 16%);
+  text-align:center;
+  color: hsl(0, 0%, 100%);
+  border-radius:0rem 1rem 1rem 3rem;
+}
+
 .re p{
   color: hsl(203, 41%, 72%);
 }
-input[type="text"].input-error{
-  border: 2px solid hsla(4, 69%, 55%);
+.re-img{
+  margin-top: 5rem;
 }
+
 .results-show{
   display: none;
+}
+@media (max-width:1010px) {
+  .btn-cal{
+    width: 90%;
+  }
+}
+@media (max-width:768px) {
+  .btn-cal{
+    width: 99%;
+  }
+  .main-row{
+      background-color: hsl(0, 0%, 100%);
+    border-radius:0rem;
+
+  }
+  .fields{
+    border-radius: 0rem;
+  }
+  .results{
+    border-radius:0rem;
+  }
 }
