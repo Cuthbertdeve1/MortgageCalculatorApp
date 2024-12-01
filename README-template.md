@@ -37,7 +37,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: (https://github.com/Cuthbertdeve1/MortgageCalculatorApp)
 - Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
 ## My process
@@ -82,6 +82,6 @@ If you want more help with writing markdown, we'd recommend checking out [The Ma
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Website - [Acuthbert Deve](https://www.your-site.com)
+- Frontend Mentor - [@Cuthbertdeve1](https://www.frontendmentor.io/profile/Cuthbertdeve1)
+- Twitter - [@yourusername](https://x.com/cuthdeve)
