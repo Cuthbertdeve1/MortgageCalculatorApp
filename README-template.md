@@ -38,7 +38,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: (https://github.com/Cuthbertdeve1/MortgageCalculatorApp)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: (https://cuthbertdeve1.github.io/MortgageCalculatorApp/)
 
 ## My process
 
@@ -72,16 +72,12 @@ function addCommas(num){
 }
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
-
 
 
 
 
 ## Author
 
-- Website - [Acuthbert Deve](https://www.your-site.com)
+- Website - [cuthbert Deve](https://cuthbertdeve1.github.io/MortgageCalculatorApp/)
 - Frontend Mentor - [@Cuthbertdeve1](https://www.frontendmentor.io/profile/Cuthbertdeve1)
-- Twitter - [@yourusername](https://x.com/cuthdeve)
+- Twitter - [@cuthdeve](https://x.com/cuthdeve)
